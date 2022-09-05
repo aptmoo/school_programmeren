@@ -16,6 +16,7 @@ int main()
 
 char lowercast(char c)
 {
+    // Check dat c tussen 97(kleine letter a) en 122 (kleine letter z) zit.
     if(c >= 97 && c <= 122)
     {
         return c - 32;
