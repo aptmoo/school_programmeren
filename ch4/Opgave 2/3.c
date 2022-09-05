@@ -11,6 +11,7 @@ int main()
     char buffer[MAX_BUFFER_SIZE];
     int i;
 
+    printf("Noem een jaar: ");
     fgets(buffer, MAX_BUFFER_SIZE, stdin);
     i = atoi(buffer);
 
