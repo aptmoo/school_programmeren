@@ -8,6 +8,7 @@ int isSquare(int);
 
 int main()
 {
+    // Defenieer een buffer met vooraf ingestelde grootte.
     char buffer[MAX_BUFFER_SIZE];
     int n;
     
