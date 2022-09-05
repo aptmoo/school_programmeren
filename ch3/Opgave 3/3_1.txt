@@ -1,0 +1,8 @@
+Opgave 1
+1. x = A - B
+2. 
+
+Opgave 3.
+z = y/x
+x = 3
+x = 17
