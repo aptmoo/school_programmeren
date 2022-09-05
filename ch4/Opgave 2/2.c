@@ -5,9 +5,12 @@ char lowercast(char);
 
 int main()
 {
+    // Maak een simpele ascii tabel
     for (int i = 0; i < 128; i++)
     {
+        printf("%d: ", i);
         putc(lowercast(i), stdout);
+        putc('\n', stdout);
     }
 }
 
