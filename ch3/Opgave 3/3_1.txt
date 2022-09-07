@@ -1,6 +1,11 @@
 Opgave 1
-1. x = A - B
-2. 
+1. x = A - B; y = B - (A - B);
+2. x = A + B; y = (A+B) - B; x = B
+3. X = A; y = 0 -(B - A) = -B + A;
+4. 3X + 3Y + Y; 3x + 5Y = A;
+
+Opgave 2
+1. X = X + Y; Y = x - 2y; 
 
 Opgave 3.
 z = y/x
