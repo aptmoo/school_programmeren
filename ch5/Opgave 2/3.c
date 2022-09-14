@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include "a.h"
 
-int rrand(int, int);
-
 int main()
 {
     int grootste = 0;
