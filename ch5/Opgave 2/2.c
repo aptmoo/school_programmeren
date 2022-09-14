@@ -1,7 +1,6 @@
 #include "a.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 int telindices(int[]);
 
 int main()
