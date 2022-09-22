@@ -9,17 +9,21 @@ int rrand(int, int);
 int main()
 {
     srand(time(NULL));
-    for(int i = 0; i <= ARRAY_SIZE; i++)
+    for(int i = 1; i <= ARRAY_SIZE; i++)
     {
-        b[i] = rrand(0, 9);
+        a[i] = rrand(0, 9);
+        printf("%d", a[i]);
     }
-    for(int i = 0; i < ARRAY_SIZE; i++)
+    putchar('\n');
+    for (int i = 1; i <= ARRAY_SIZE; i++)
     {
-        if(b[i] == a[i])
-        {
-            printf("%d\n", i);
-        }
+        b[a[i]]++;
     }
+    for (int i = 1; i <= ARRAY_SIZE; i++)
+    {
+        printf("%d", b[i]);
+    }
+    putchar('\n');
 }
 
 int rrand(int min, int max)

@@ -6,13 +6,10 @@ int fac(int);
 
 int main()
 {
-    for(int i = 0; i < ARRAY_SIZE; i++)
-    {
-        a[i] = fac(a[i]);
-    }
     printf("[ ");
     for(int i = 0; i < ARRAY_SIZE; i++)
     {
+        a[i] = fac(a[i]);
         printf("%d ", a[i]);
     }
     printf("]\n");

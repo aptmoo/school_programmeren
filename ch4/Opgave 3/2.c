@@ -6,7 +6,7 @@ int string_staartstuk(char[], char[]);
 
 int main()
 {
-    int i = string_staartstuk("abcdef", "defg");
+    int i = string_staartstuk("abcdef", "def");
     printf("%d\n", i);
 }
 
@@ -14,7 +14,7 @@ int string_staartstuk(char s[], char t[])
 {
     int x, y;
     x = strlen(s) - strlen(t);
-    printf("%d\n", x);
+    // printf("%d\n", x);
     if(x < 0) return 0;
 
     for(y = 0;s[x] != '\0' && t[y] != '\0' && t[y] == s[x]; x++, y++);

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 #define MAX_BUFFER_SIZE 512
 
@@ -18,7 +19,7 @@ int main()
 
 int dingens(int n)
 {
-    for(int i = 1; i < n; i++)
+    for(int i = 1; i < sqrt(n); i++)
     {
         if(n%i == 0) printf("%d\n", i);
     }
