@@ -54,11 +54,17 @@ public:
 
     bool checkPoint(Point p)
     {
-        std::printf("%f %f \n", p0.x, p0.y);
-        std::printf("%f %f \n", p1.x, p1.y);
-        std::printf("%d\n", p > p0);
-        std::printf("%d\n", p < p1);
         return (p > p0) && (p < p1);
+    }
+
+    bool whithin(Rectangle rect)
+    {
+        return (rect.p0 > p0) && (rect.p1 < p1);
+    }
+
+    bool intersects(Rectangle rect)
+    {
+        return (rect.p0 > p1) || (rect.p1 < p0);
     }
 private:
     Point p0;
@@ -82,6 +88,20 @@ int main()
     Point anotherThingy = {5.0f, 10.0f};
 
     std::printf("-----\n");
-    std::printf("ABC%d\n", rect.checkPoint(thingy));
-    std::printf("ABC%d\n", rect.checkPoint(anotherThingy));
+    std::printf("%d\n", rect.checkPoint(thingy));
+    std::printf("%d\n", rect.checkPoint(anotherThingy));
+
+{    std::printf("-----\n");
+    Rectangle rect2((Point){5, 10}, (Point){11, 11});
+    Rectangle rect3((Point){0, 0}, (Point){100, 100});
+
+    std::printf("%d\n", rect.whithin(rect2));
+    std::printf("%d\n", rect.whithin(rect3));}
+
+    {std::printf("-----\n");
+    Rectangle rect4((Point){0, 0}, (Point){1, 1});
+    Rectangle rect5((Point){0, 0}, (Point){11, 11});
+
+    std::printf("%d\n", rect.intersects(rect4));
+    std::printf("%d\n", rect.intersects(rect5));}
 }
