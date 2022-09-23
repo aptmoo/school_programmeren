@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "a.out.h": "c",
+        "iostream": "cpp",
+        "map": "cpp"
+    }
+}
