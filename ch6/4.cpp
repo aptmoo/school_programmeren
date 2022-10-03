@@ -13,7 +13,6 @@ public:
     std::string toString()
     {
         std::stringstream stream;
-        std::format;
     };
     
 private:

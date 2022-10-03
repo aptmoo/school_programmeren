@@ -3,13 +3,20 @@
 #include <string>
 #include <sstream>
 
-class CPlayerManager
+class PlayerManager
 {
 public:
+    PlayerManager(){};
+    ~PlayerManager(){};
+
     void AddPlayer(std::string name, int score)
     {
-        players.insert({name, 10});
+        players.insert({name, score});
     };
+    bool PlayerExists(std::string name)
+    {
+        return players.find(name) != players.end();
+    }
     void SetPlayerScore(std::string name, int score)
     {
         // Check if player exists
@@ -17,6 +24,7 @@ public:
         {
             std::cout << "Player '" << name << "' not found, ignoring" << '\n';
         }
+        players[name] = score;
     }
     int getPlayerScore(std::string name)
     {
@@ -27,7 +35,7 @@ public:
         }
         return players[name];
     };
-    std::string dump()
+    std::string toString()
     {
         std::stringstream stream;
         for(auto const &o : players)
@@ -42,10 +50,41 @@ private:
 
 int main(int argc, char const *argv[])
 {
-    CPlayerManager manager;
-    manager.AddPlayer("DooDooMan", 10);
-    std::cout << manager.getPlayerScore("Kool-aid man") << '\n';
-    std::cout << manager.dump();
+    PlayerManager manager;
+    std::string input;
+    while (true)
+    {
+        std::cout << ":";
+        input.clear();
+        std::cin >> input;
+        if(input == "q")
+        {
+            return 0;
+        }
+        else if(input == "c")
+        {
+            int NewScore;
+            input.clear();
+            std::cin >> input >> NewScore;
+            if(manager.PlayerExists(input))
+            {
+                manager.SetPlayerScore(input, NewScore);
+            }
+            else
+            {
+                manager.AddPlayer(input, NewScore);    
+            }
+        }
+        else if(input == "l")
+        {
+            std::cout << manager.toString();
+        }
+        else
+        {
+            std::cout << input << ": " << manager.getPlayerScore(input) << '\n';
+        }
+    }
+    
     return 0;
 }
 
@@ -64,11 +103,11 @@ private:
     int _score;
 };
 
-class CPlayerManager
+class PlayerManager
 {
 public:
-    CPlayerManager(){};
-    ~CPlayerManager(){};
+    PlayerManager(){};
+    ~PlayerManager(){};
 
     void AddPlayer(const std::string name, const int score)
     {
@@ -88,7 +127,7 @@ private:
 
 int main(int argc, char const *argv[])
 {
-    CPlayerManager manager;
+    PlayerManager manager;
 
     manager.AddPlayer("Bjarne Soustrup", 45789);
     manager.AddPlayer("Rik van Cerato", 314789);
