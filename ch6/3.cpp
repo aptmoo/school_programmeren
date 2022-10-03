@@ -22,7 +22,7 @@ public:
         // Check if player exists
         if(players.find(name) == players.end())
         {
-            std::cout << "Player '" << name << "' not found, ignoring" << '\n';
+            return;
         }
         players[name] = score;
     }
@@ -31,7 +31,7 @@ public:
         // Check if player exists
         if(players.find(name) == players.end())
         {
-            std::cout << "Player '" << name << "' not found, defaulting to 0" << '\n';
+            return -1;
         }
         return players[name];
     };
@@ -57,11 +57,11 @@ int main(int argc, char const *argv[])
         std::cout << ":";
         input.clear();
         std::cin >> input;
-        if(input == "a")
+        if(input == "q")
         {
             return 0;
         }
-        else if(input == "c")
+        else if(input == "a")
         {
             int NewScore;
             input.clear();
