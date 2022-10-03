@@ -1,6 +1,7 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include <sstream>
 
 class CPlayerManager
 {
@@ -14,7 +15,7 @@ public:
         // Check if player exists
         if(players.find(name) == players.end())
         {
-            std::cout << "Player not found, ignoring" << '\n';
+            std::cout << "Player '" << name << "' not found, ignoring" << '\n';
         }
     }
     int getPlayerScore(std::string name)
@@ -22,9 +23,18 @@ public:
         // Check if player exists
         if(players.find(name) == players.end())
         {
-            std::cout << "Player not found, defaulting to 0" << '\n';
+            std::cout << "Player '" << name << "' not found, defaulting to 0" << '\n';
         }
         return players[name];
+    };
+    std::string dump()
+    {
+        std::stringstream stream;
+        for(auto const &o : players)
+        {
+            stream << o.first << ":" << o.second << '\n';
+        }
+        return stream.str();
     };
 private:
     std::map<std::string, int> players;
@@ -35,6 +45,7 @@ int main(int argc, char const *argv[])
     CPlayerManager manager;
     manager.AddPlayer("DooDooMan", 10);
     std::cout << manager.getPlayerScore("Kool-aid man") << '\n';
+    std::cout << manager.dump();
     return 0;
 }
 
