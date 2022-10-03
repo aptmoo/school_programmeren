@@ -57,7 +57,7 @@ int main(int argc, char const *argv[])
         std::cout << ":";
         input.clear();
         std::cin >> input;
-        if(input == "q")
+        if(input == "a")
         {
             return 0;
         }
