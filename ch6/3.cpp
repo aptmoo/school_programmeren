@@ -2,6 +2,8 @@
 #include <map>
 #include <string>
 #include <sstream>
+#include <cstdlib>
+#include <cstdio>
 
 class PlayerManager
 {
@@ -66,6 +68,7 @@ int main(int argc, char const *argv[])
             int NewScore;
             input.clear();
             std::cin >> input >> NewScore;
+            std::cout << NewScore;
             if(manager.PlayerExists(input))
             {
                 manager.SetPlayerScore(input, NewScore);
@@ -83,6 +86,7 @@ int main(int argc, char const *argv[])
         {
             std::cout << input << ": " << manager.getPlayerScore(input) << '\n';
         }
+        getchar();
     }
     
     return 0;

@@ -16,7 +16,7 @@ public:
     };
     
 private:
-    std::time_t time;
+    
 };
 
 int main(int argc, char const *argv[])
