@@ -145,7 +145,7 @@ namespace jl
         void Move(float dt)
         {
             // vscode hates me?
-            position += speed * dt;
+            position += velocity * dt;
         }
 
         void SetVelocity(const Vector3& newvel)
