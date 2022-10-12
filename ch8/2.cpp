@@ -21,9 +21,10 @@ private:
 class AccountManager
 {
 public:
-    void AddAccount(std::string name, int value)
+    void AddAccount(const std::string& name, const int value)
     {
         _accounts.push_back({name, value});
+        _accounts.back().manager = this;
     };
     void Transfer(int to, int from, int value)
     {
